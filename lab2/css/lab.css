@@ -1,0 +1,16 @@
+h1
+{
+  color:yellow;
+  background-color: #00beff;
+  padding: 20px;
+  margin: 10px;
+}
+
+#content
+{
+  padding: 10px;
+  margin: 10px;
+  width: 600px;
+  border-style: dotted;
+  text-indent: 30px;
+}
