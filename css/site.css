@@ -3,6 +3,6 @@
     width: 500px;
 }
 #homepage-title {
-  font-size: 150%
-  font-family: fantasy;
+  font-size: 4em;
+  font-family: inherit;
 }
