@@ -1,3 +1,8 @@
 #my-portrait {
+    float: right;
     width: 500px;
+}
+#homepage-title {
+  font-size: 150%
+  font-family: fantasy;
 }
