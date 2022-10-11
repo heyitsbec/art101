@@ -3,10 +3,15 @@
     width: 500px;
 }
 #homepage-title {
-  font-size: 4em;
-  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; 
+  font-size: 50px;
+  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
 }
 #labs-section {
-  font-size: 2em;
+  font-size: 40px;
+  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+  text-decoration-color: black
+}
+#self-intro {
+  font-size: 20px
   font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
 }
