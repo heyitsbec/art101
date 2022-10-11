@@ -4,5 +4,9 @@
 }
 #homepage-title {
   font-size: 4em;
-  font-family: inherit;
+  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; 
+}
+#labs-section {
+  font-size: 2em;
+  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
 }
