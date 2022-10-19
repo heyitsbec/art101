@@ -1,0 +1,19 @@
+#picture {
+  width: 350px;
+  float: right;
+  padding: 15px;
+}
+
+#picturetwo {
+  width: 400px;
+  float: right;
+  padding: 15px;
+}
+
+#content {
+  border: 2px;
+  background-color: rgba(236, 236, 236, 1);
+  color: black;
+  margin: 20px 10px;
+  padding: 15px;
+}
