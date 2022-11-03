@@ -1,51 +1,86 @@
 /*
 * Author: Rebecca Slason
-* Created: 31 October 2022
+* Created: 2 November 2022
 * Lisence: Public Domain
 */
 
-var outputEl = document.getElementById("output");
+var inputButton = document.getElementById("inputButton");
+var extraButton = document.getElementById("extraButton");
+var extraInputs = document.getElementsByClassName("extraInput");
 
-var new1El = document.createElement("p");
-var new2El = document.createElement("p");
+console.log(extraInputs);
 
-var count = 0;
-
-new1El.innerText = "Hello! My name is new1El, a paragraph.";
-new2El.innerHTML = "Hey. I'm new2El, a brand new paragraph.";
-
-outputEl.appendChild(new1El);
-outputEl.appendChild(new2El);
-
-//taskX experiments
-
-//Define two unodered lists
-
-var ul1 = document.createElement("ul");
-var ul2 = document.createElement("ul");
-
-//Add some platforms to the lists
-
-ul1.innerHTML ="<li>Nintendo Switch</li> <li>Playstation 5</li>";
-ul2.innerHTML ="<li>PC</li> <li>Xbox Series X/S</li>";
-
-outputEl.appendChild(ul1);
-outputEl.appendChild(ul2);
-
-//Create a button that insert the last element from the second list to the first list as its first element.
-
-var outputButton = document.getElementById("moveElementButton");
-outputButton.onclick = function()
-{
-  if(count < 2)
+inputButton.addEventListener("click", function() {
+  var name = document.getElementById("user-name").value;
+  if(name != null)
   {
-    console.log(ul1.children);
-    count++;
-    ul1.insertBefore(ul2.lastElementChild, ul1.children[0]);
+    console.log(name);
+    var anagramResult = anagramGenerator(name);
+    document.getElementById("output").innerHTML = "Here is an anagram: " + anagramResult;
   }
+  return;
+})
+
+extraButton.addEventListener("click", function() {
+  console.log(extraInputs.length);
+  for(let i = 0; i < extraInputs.length; i++)
+  {
+    console.log(extraInputs[i]);
+    console.log(extraInputs[i].value.length);
+    if(extraInputs[i].value.length != 0)
+    {
+      var tempChild = document.createElement("p");
+      tempChild.innerHTML = extraInputs[i].value;
+      if(i != extraInputs.length - 1)
+      {
+        tempChild.innerHTML += "<br>";
+      }
+      document.getElementById("output").appendChild(tempChild);
+    }
+  }
+})
+
+function anagramGenerator(userName)
+{
+  console.log("-----Test-----")
+  //Get the userName
+  console.log("userName = ", userName);
+
+  //Split userName from string to array
+  var nameSeperateArray = userName.split(' ');
+  console.log("nameSeperateArray = ", nameSeperateArray);
+
+  //Create anagram array using nameSeperateArray
+  for(let i = 0; i < nameSeperateArray.length; i++)
+  {
+    nameSeperateArray[i] = nameSeperateArray[i].split('');
+    nameSeperateArray[i] = createAnagram(nameSeperateArray[i]).join('').toLowerCase();
+    nameSeperateArray[i] = nameSeperateArray[i].charAt(0).toUpperCase() + nameSeperateArray[i].substring(1);
+  }
+  console.log("nameSeperateArray = ", nameSeperateArray);
+
+  //Join nameSeperateArray back to a string
+
+  var anagramString = nameSeperateArray.join(' ');
+  console.log("anagramString = ", anagramString);
+
+  //Return the result
+  return anagramString;
 }
 
-function MoveElement()
+//A function that shuffles an array
+function createAnagram(tempArray)
 {
-  ul1.insertBefore(ul2.lastElementChild, ul1[0]);
+  var shuffledArray = [];
+  for(let i = 0; i < tempArray.length; i++)
+  {
+    let index = parseInt(tempArray.length/2 + i);
+    if(index >= tempArray.length)
+    {
+      index -= tempArray.length;
+    }
+    shuffledArray.push(tempArray[index]);
+  }
+  shuffledArray.reverse();
+  return shuffledArray;
 }

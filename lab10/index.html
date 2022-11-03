@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-			<title>Lab 10</title>
-			<script src="js/lab.js" defer></script>
-			<link rel="stylesheet" type="text/css" href="../css/site.css">
-			<link rel="stylesheet" type="text/css" href="css/lab.css">
-			<script src="js/lab.js" defer></script>
-	</head>
-	<body>
-		<div id="content">
-			<h1>Lab 10: JavaScript Events and Forms</h1>
-			<p>For this lab we had to experiment with DOM manipulation.</p>
-			<h2>Challenges</h2>
-			<p>I had a few typos as usual with my code that presented me with different errors. Once I fixed the puncuation and spelling of a few things I was able to complete the lab.</p>
-			<h2>Results</h2>
-			<p>My partner and I also completed bonus task questions 1 and we were able to write the code to arrange the order of elements using appendChild. Here are our results: </p>
-		</div>
-		<div id = "scriptOutput">
+	<title>Lab 10</title>
+	<script src="js/lab.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/lab.css">
+</head>
+<body>
+	<h1>Lab 10: JavaScript Events and Forms</h1>
+
+	<hr>
+
+	<div class = "sections">
+
+		<h2>Challenge</h2>
+		<p>For this lab we had to experiment with JS events.</p>
+
+		<h2>Problems</h2>
+		<p>I had a few typos as usual with my code that presented me with different errors. Once I fixed the puncuation and spelling of a few things I was able to complete the lab.</p>
+
+		<h2>Results</h2>
+		<p>My partner and I also completed bonus task questions 1 and 2. We were able to use similar code from Lab 7 to make an anagram. For question 2 we added another input field which returned the results to our output div. Here are our results: </p>
+
+		<div id = "outputBlock">
 			<h2>Script Output</h2>
+
+			<lable for = "inputField">Input your name:
+				<input type = "text" id = "user-name">
+				<button id = "inputButton">Get your name</button>
+			</label>
+
+		<br><br>
+
+		<lable for = "inputField">Add something to the output div:<br>
+			<input type = "text" class = "extraInput"><br>
+			<input type = "text" class = "extraInput"><br>
+			<input type = "text" class = "extraInput"><br>
+			<input type = "text" class = "extraInput"><br>
+			<button id="extraButton">Let's add it</button>
+		</label>
+
 			<div id = "output"></div>
 		</div>
-	</body>
+	</div>
+
+</body>
 </html>
